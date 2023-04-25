@@ -42,11 +42,11 @@ export default function MD2Excel() {
     try {
       const plain = await convertMarkdownTableToExcel(input);
       await Clipboard.copy(plain);
-      await showHUD("Converted to CSV and copied to clipboard");
+      await showHUD("Converted to Plain and copied to clipboard");
       await popToRoot();
     } catch (error) {
       console.error(error);
-      showToast(Toast.Style.Failure, "Failed to convert and copy CSV", "See console for more details");
+      showToast(Toast.Style.Failure, "Failed to convert and copy Plain", "See console for more details");
     }
   };
   
@@ -55,7 +55,7 @@ export default function MD2Excel() {
     <Form actions={<ActionPanel>
         <Action
           icon={Icon.Clipboard}
-          title="Convert to CSV and Copy to Clipboard"
+          title="Convert to Plain and Copy to Clipboard"
           onAction={handleSubmit}
         />
       </ActionPanel>
