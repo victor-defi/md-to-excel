@@ -36,7 +36,7 @@ function createMarkdownTable(tableData: string[][]): string {
   return result;
 }
 
-function convertExcelToMarkdown(excel: string): Promise<string> { 
+function convertExcelToMarkdown(excel: string): Promise<string> {
   const lines = excel.trim().split("\n");
   const tableData = lines.map((line) => line.split("\t").map((cell) => cell.trim()));
 
